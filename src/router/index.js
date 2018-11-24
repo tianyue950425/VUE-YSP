@@ -24,10 +24,10 @@ import Cloth from '../components/Cloth'
 
 /*珠宝配饰*/
 import Jewelley from '../components/Jewelley'
-import JewelleyDetail from '../components/JewelleyDetail'
 
+/*美妆个护*/
 import Beauty from '../components/Beauty'
-import BeautyDetail from '../components/BeautyDetail'
+
 
 /*香氛*/
 import Fragrance from '../components/Fragrance'
@@ -89,14 +89,8 @@ export default new Router({
       path:'/detaillist/5',
       component:Jewelley
     },{
-      path:'/JewelleyDetail/:id',
-      component:JewelleyDetail
-    },{
       path:'/detaillist/6',
       component:Beauty
-    },{
-      path:'/BeautyDetail/:id',
-      component:BeautyDetail
     },{
       path:'/detaillist/7',
       component:Fragrance
