@@ -109,6 +109,7 @@ import axios from "axios"
 import Vue from "vue" 
 import Swiper from "swiper" 
 import "swiper/dist/css/swiper.css"
+import { Indicator } from 'mint-ui';
 
 Vue.directive("swipe",{
   inserted(el,binding,vnode){
@@ -149,6 +150,10 @@ export default {
   methods:{
   },
   mounted(){
+    Indicator.open({
+      text: '加载中...',
+      spinnerType: 'fading-circle'
+    }),
     axios.get(`/app/product/${this.$route.params.id}`).then(res=>{
       //console.log(res.data);
       this.obj =res.data
@@ -173,7 +178,10 @@ export default {
       //console.log(this.obj.data.badges)
     }).catch(error=>{
       console.log(error);
-     })
+     }),
+    Promise.all([axios.get(`/app/product/${this.$route.params.id}`),axios.get(`/app/product/${this.$route.params.id}/details?legacy=false`)]).then(res=>{
+       Indicator.close();
+    })
     },
     beforeDestroy(){
     
