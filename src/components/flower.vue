@@ -18,6 +18,7 @@
 
 <script>
 import axios from "axios"
+import { Indicator } from 'mint-ui';
 export default {
   name: 'FlowerDetail',
   data () {
@@ -30,9 +31,16 @@ export default {
     }
   },
   mounted(){
+     Indicator.open({
+      text: '加载中...',
+      spinnerType: 'fading-circle'
+    }),
     axios.get("/app/search/product?limit=20&offset=0&categoryId=101,102,103,104,105,106,107,111,112,113,121,122,181,191&sortField=RELEASE&sortOrder=DESC").then(res=>{
       this.datalist = res.data.data.items;
       this.total = res.data.data.total;
+    }),
+    Promise.all([axios.get("/app/search/product?limit=20&offset=0&categoryId=101,102,103,104,105,106,107,111,112,113,121,122,181,191&sortField=RELEASE&sortOrder=DESC")]).then(res=>{
+       Indicator.close();
     })
   },
   methods:{

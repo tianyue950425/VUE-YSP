@@ -11,11 +11,10 @@ import Flower from '../components/flower'
 
 /*家纺*/
 import Textiles from '../components/Textiles'
-import TextilesDetail from '../components/TextilesDetail'
 
 /*家具*/
 import Furniture from '../components/Furniture'
-import FurnitureDetail from '../components/FurnitureDetail'
+
 
 /*家饰餐厨*/
 import Kitchen from '../components/Kitchen'
@@ -80,14 +79,8 @@ export default new Router({
       path:'/detaillist/1',
       component:Textiles
     },{
-      path:'/TextilesDetail/:id',
-      component:TextilesDetail
-    },{
       path:'/detaillist/2',
       component:Furniture
-    },{
-      path:'/FurnitureDetail/:id',
-      component:FurnitureDetail
     },{
       path:'/detaillist/3',
       component:Kitchen
