@@ -69,7 +69,7 @@ import axios from "axios"
 import Vue from "vue"
 import Swiper from "swiper"
 import "swiper/dist/css/swiper.css"
-
+import { Indicator } from 'mint-ui';
 
 export default {
   name: 'home',
@@ -82,6 +82,10 @@ export default {
     }
   },
   mounted(){
+    Indicator.open({
+      text: '加载中...',
+      spinnerType: 'fading-circle'
+    }),
     axios.get("/app/index/getIndexDatas").then(res=>{
      // console.log(res.data.data.banners)
       this.datalist = res.data.data.banners
@@ -107,6 +111,9 @@ export default {
       this.datalist4 = res.data.data
     }).catch(error=>{
       console.log(error)
+    }),
+    Promise.all([axios.get("/app/index/getIndexDatas"),axios.post('/app/product/simple',["PROD001026541","PROD001022983","PROD001026304","PROD001026503","PROD001024475","PROD001020048","PROD001014367","PROD001026087","PROD001025863","PROD001025925"])]).then(res=>{
+       Indicator.close();
     })
   },
   methods:{
