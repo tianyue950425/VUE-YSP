@@ -53,7 +53,7 @@ export default {
       width:90%;
       height: 100%;
       color:white;
-      z-index:10;
+      z-index:11;
       }   
 
     ul{
