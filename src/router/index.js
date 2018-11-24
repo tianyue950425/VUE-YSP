@@ -6,9 +6,8 @@ import Shelftime from '../components/shelftime'
 import Commodityprice from '../components/commodityprice'
 import Detail from "../components/detail"
 
-
+/*花艺*/
 import Flower from '../components/flower'
-import FlowerDetail from '../components/FlowerDetail'
 
 /*家纺*/
 import Textiles from '../components/Textiles'
@@ -78,9 +77,6 @@ export default new Router({
     {
       path:'/detaillist/0',
       component:Flower
-    },{
-       path:'/FlowerDetail/:id',
-      component:FlowerDetail
     },{
       path:'/detaillist/1',
       component:Textiles
