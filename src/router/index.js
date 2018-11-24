@@ -18,11 +18,9 @@ import Furniture from '../components/Furniture'
 
 /*家饰餐厨*/
 import Kitchen from '../components/Kitchen'
-import KitchenDetail from '../components/KitchenDetail'
 
 /*家居服*/
 import Cloth from '../components/Cloth'
-import ClothDetail from '../components/ClothDetail'
 
 /*珠宝配饰*/
 import Jewelley from '../components/Jewelley'
@@ -85,14 +83,8 @@ export default new Router({
       path:'/detaillist/3',
       component:Kitchen
     },{
-      path:'/KitchenDetail/:id',
-      component:KitchenDetail
-    },{
       path:'/detaillist/4',
       component:Cloth
-    },{
-      path:'/ClothDetail/:id',
-      component:ClothDetail
     },{
       path:'/detaillist/5',
       component:Jewelley
