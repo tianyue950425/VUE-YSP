@@ -31,14 +31,14 @@ import Beauty from '../components/Beauty'
 
 /*香氛*/
 import Fragrance from '../components/Fragrance'
-import FragranceDetail from '../components/FragranceDetail'
+
 
 /*礼物*/
 import Gift from '../components/Gift'
 
 /*海外直邮*/
 import Nature from '../components/Nature'
-import NatureDetail from '../components/NatureDetail'
+
 
 Vue.use(Router)
 
@@ -95,17 +95,11 @@ export default new Router({
       path:'/detaillist/7',
       component:Fragrance
     },{
-      path:'/FragranceDetail/:id',
-      component:FragranceDetail
-    },{
       path:'/detaillist/8',
       component:Gift
     },{
       path:'/detaillist/9',
       component:Nature
-    },{
-      path:'/NatureDetail/:id',
-      component:NatureDetail
     }
   ]
 })

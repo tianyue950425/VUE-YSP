@@ -208,6 +208,7 @@ a{
     padding: 0 0 33px;
 }
 img{
+  margin-top: 55px;
   width:100%;
 }
 .product-info {
