@@ -38,7 +38,6 @@ import FragranceDetail from '../components/FragranceDetail'
 
 /*礼物*/
 import Gift from '../components/Gift'
-import GiftDetail from '../components/GiftDetail'
 
 /*海外直邮*/
 import Nature from '../components/Nature'
@@ -122,9 +121,6 @@ export default new Router({
     },{
       path:'/detaillist/8',
       component:Gift
-    },{
-      path:'/GiftDetail/:id',
-      component:GiftDetail
     },{
       path:'/detaillist/9',
       component:Nature

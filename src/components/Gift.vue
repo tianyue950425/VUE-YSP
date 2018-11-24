@@ -21,6 +21,7 @@
 
 <script>
 import axios from "axios"
+import { Indicator } from 'mint-ui';
 export default {
   name: 'shelftime',
   data () {
@@ -34,6 +35,10 @@ export default {
     }
   },
   mounted(){
+    Indicator.open({
+      text: '加载中...',
+      spinnerType: 'fading-circle'
+    }),
     axios.get("/app/article/1022324").then(res=>{
       console.log(res.data.data.modules[0].data.image.src);
       this.obj = res.data.data.modules[0];
@@ -46,7 +51,10 @@ export default {
         console.log(this.datalist)
       }).catch(error=>{
         console.log(error)
-      })
+      }),
+      Promise.all([axios.get("/app/article/1022324"),axios.post('/app/product/simple',["PROD001022345","PROD001022344","PROD001021374","PROD001021375","PROD001021373","PROD001021378","PROD001020630","PROD001020631","PROD001020440","PROD001020441","PROD001020442","PROD001023944","10010001","PROD001020751","PROD001020183","PROD001020184","PROD001020185","PROD001020186","PROD001020187","PROD001022094","PROD001024084","PROD001024085","PROD001024086","PROD001024087","PROD001024088","PROD001024089","PROD001024090","PROD001024091","PROD001024911", "PROD001024944", "PROD001024909", "PROD001025285", "PROD001024942", "PROD001018766","PROD001021109", "PROD001017997", "PROD001023966", "PROD001025475", "PROD001013323", "PROD001020844","PROD001020902", "PROD001020903", "PROD001017538", "PROD001017539", "PROD001017540", "12014077"])]).then(res=>{
+       Indicator.close();
+    })
     },
   methods:{
     handlieClick(id){
